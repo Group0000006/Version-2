@@ -9,19 +9,18 @@
     
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles to enforce the aesthetic */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Off-white background for the overall site */
+            background-color: #f8f8f8; 
         }
         .header-bg {
-            background-color: #1a1a1a; /* Dark Black */
+            background-color: #1a1a1a; 
         }
         .accent-red {
-            background-color: #dc2626; /* Red-700 */
+            background-color: #dc2626; 
         }
         .accent-red-text {
-            color: #dc2626; /* Red-700 */
+            color: #dc2626; 
         }
         .menu-card {
             transition: transform 0.2s, box-shadow 0.2s;
@@ -30,26 +29,22 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.3), 0 4px 6px -2px rgba(220, 38, 38, 0.2);
         }
-        /* Style for the active mode button */
         .mode-btn.active {
-            background-color: #dc2626; /* Red-700 */
+            background-color: #dc2626; 
             color: white;
             border-color: #dc2626;
         }
-        /* Style for size buttons */
         .size-btn {
-            background-color: #fef2f2; /* Red-50 */
+            background-color: #fef2f2; 
             color: #dc2626;
-            border: 1px solid #fca5a5; /* Red-300 */
+            border: 1px solid #fca5a5; 
             transition: all 0.1s;
         }
         .size-btn:hover {
-            background-color: #fee2e2; /* Red-100 */
+            background-color: #fee2e2;
         }
 
-        /* --- Homepage Hero Section Styles (Retained) --- */
         .homepage-hero {
-            /* Using the original uploaded image file path for the background */
             background-image: url('cb2dd700-5096-48ee-8459-b156b95462a4.jpeg'); 
             background-size: cover;
             background-position: center;
@@ -65,7 +60,7 @@
         }
 
         .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+            background-color: rgba(0, 0, 0, 0.6); 
             position: absolute;
             top: 0;
             left: 0;
@@ -196,12 +191,8 @@
     </div>
 
     <script>
-        // --- DATA SETUP ---
-        // Complete Menu Structure based on user's new list
+        
         const categorizedMenu = [
-            // ----------------------------------------------------
-            // 1. SULIT RICE MEALS (ID 20-24)
-            // ----------------------------------------------------
             {
                 category: "SULIT RICE MEALS",
                 items: [
@@ -212,10 +203,7 @@
                     { id: 24, name: "Chicken Nuggets with Rice", price: 119.00, description: "Includes your choice of flavor (Garlic Parmesan, Honey BBQ, Jalapeño Cheddar, Buffalo, Classic, Honey Mustard). Please specify in notes.", type: 'single' },
                 ]
             },
-            // ----------------------------------------------------
-            // 2. RICE TOPPERS (LOADED MEALS) (ID 25-30)
-            // Description simplified for clarity.
-            // ----------------------------------------------------
+
             {
                 category: "RICE TOPPERS (Loaded Meals)",
                 items: [
@@ -227,10 +215,7 @@
                     { id: 30, name: "Pork BBQ Rice Topper", price: 149.00, description: "Loaded Meal: Java Rice (Reg/Spicy), Pork BBQ, Baked Potatoes, Veggies, Free Drink.", type: 'single' },
                 ]
             },
-            // ----------------------------------------------------
-            // 3. PIZZA - PREMIUM FLAVORS & MIXES (ID 31-36)
-            // Using item.sizes array for price variants
-            // ----------------------------------------------------
+            
             {
                 category: "PIZZA - PREMIUM FLAVORS & MIXES",
                 items: [
@@ -242,10 +227,7 @@
                     { id: 36, name: "2 in 1 Pizza (Any Flavor)", description: "Mix any two regular flavors. Please specify choices in notes.", type: 'multi_size', sizes: [{ sizeId: '12', name: '12"', price: 470 }, { sizeId: '16', name: '16"', price: 755 }] },
                 ]
             },
-            // ----------------------------------------------------
-            // 4. PIZZA - REGULAR FLAVORS (ID 37-46)
-            // Using item.sizes array for price variants
-            // ----------------------------------------------------
+            
             {
                 category: "PIZZA - REGULAR FLAVORS",
                 items: [
@@ -261,10 +243,7 @@
                     { id: 46, name: "Creamcheese Margherita Pizza", description: "Regular Flavor.", type: 'multi_size', sizes: [{ sizeId: '12', name: '12"', price: 400 }, { sizeId: '16', name: '16"', price: 640 }] },
                 ]
             },
-            // ----------------------------------------------------
-            // 5. PASTA (ID 47-51)
-            // Using item.sizes array for price variants
-            // ----------------------------------------------------
+            
             {
                 category: "PASTA",
                 items: [
@@ -275,9 +254,7 @@
                     { id: 51, name: "Pancit Guisado", description: "Filipino stir-fried noodles.", type: 'multi_size', sizes: [{ sizeId: 'S', name: 'Solo', price: 150 }, { sizeId: 'Q', name: 'Quarter', price: 280 }, { sizeId: 'H', name: 'Half', price: 500 }, { sizeId: 'W', name: 'Whole', price: 900 }] },
                 ]
             },
-            // ----------------------------------------------------
-            // 6. CHICKEN & SIDES (ID 52-62)
-            // ----------------------------------------------------
+            
             {
                 category: "CHICKEN, SIDES & SNACKS",
                 items: [
@@ -295,28 +272,21 @@
                     { id: 62, name: "PICK ALL-IN", price: 759.00, description: "Loaded snacks combo with 7 items.", type: 'single' },
                 ]
             },
-            // ----------------------------------------------------
-            // 7. BURGERS & COMBO MEALS (ID 63-70)
-            // ----------------------------------------------------
+            
             {
                 category: "BURGERS & COMBO MEALS",
                 items: [
-                    // Burgers
                     { id: 63, name: "Buy 1 Get 1 Burger", price: 115.00, description: "Add ₱50 for extra cheesy.", type: 'single' },
                     { id: 64, name: "B1G1 Meaty Chicken Burger w/ Fries & Drinks", price: 159.00, description: "Add ₱50 for extra cheesy. Please specify drink/cheese upgrade in notes.", type: 'single' },
                     { id: 65, name: "Supreme Regular Burger", price: 209.00, description: "Big, juicy burger.", type: 'single' },
                     { id: 66, name: "Supreme Burger w/ Fries or Onion Rings", price: 259.00, description: "Served with your choice of side. Please specify side in notes.", type: 'single' },
-                    // Combos
                     { id: 67, name: "PPC (Pasta, Pizza, Chicken)", price: 215.00, description: "Includes Pizza Slice (4 Cheese/Pepperoni/H&C), Pasta (Spag/Carbonara/Pancit), and Chicken (Original). Please specify choices in notes.", type: 'single' },
                     { id: 68, name: "PPCR (PPC + Rice)", price: 230.00, description: "Includes PPC meal plus one serving of rice. Please specify choices in notes.", type: 'single' },
-                    // Kiddie Meals
                     { id: 69, name: "Kiddie Meal - SPM", price: 89.00, description: "(Spaghetti, Pizza Meal) Pizza Choice: Pepperoni, Ham & Cheese. Please specify pizza in notes.", type: 'single' },
                     { id: 70, name: "Kiddie Meal - SCM", price: 99.00, description: "(Spaghetti, Chicken Meal).", type: 'single' },
                 ]
             },
-            // ----------------------------------------------------
-            // 8. WRAP TREATS (GROUP MEALS) (ID 71-78)
-            // ----------------------------------------------------
+            
             {
                 category: "WRAP TREATS (Group Meals)",
                 items: [
@@ -330,10 +300,7 @@
                     { id: 78, name: "Wrap Treat 3.2 (22-24 Pax)", price: 4780.00, description: "2 Whole Spaghetti/Carbonara/Baked Mac, 4 12\" Pizza (Any Regular Flavor), 8 orders of Wings (Any Flavor).", type: 'single' },
                 ]
             },
-            // ----------------------------------------------------
-            // 9. ADVANCE ORDER - ULAM TRAYS & ROASTED MEAT (ID 79-100)
-            // Using item.sizes array for price variants
-            // ----------------------------------------------------
+            
             {
                 category: "ADVANCE ORDER: TRAYS & PLATTERS",
                 items: [
@@ -351,26 +318,20 @@
                     { id: 90, name: "Sweet & Sour Fish Fillet Ulam Tray", description: "Advance Order: Whole/Half/Quarter Tray.", type: 'multi_size', sizes: [{ sizeId: 'W', name: 'Whole', price: 1899 }, { sizeId: 'H', name: 'Half', price: 999 }, { sizeId: 'Q', name: 'Quarter', price: 579 }] },
                     { id: 91, name: "Lumpia (Spring Rolls)", description: "Advance Order.", type: 'multi_size', sizes: [{ sizeId: '100', name: '100 pcs', price: 699 }, { sizeId: '50', name: '50 pcs', price: 399 }, { sizeId: '25', name: '25 pcs', price: 255 }] },
                     
-                    // Rice Platter
                     { id: 92, name: "Plain Rice Platter", description: "Advance Order: Whole/Half/Quarter/Solo.", type: 'multi_size', sizes: [{ sizeId: 'W', name: 'Whole', price: 410 }, { sizeId: 'H', name: 'Half', price: 215 }, { sizeId: 'Q', name: 'Quarter', price: 115 }, { sizeId: 'S', name: 'Solo', price: 20 }] },
                     { id: 93, name: "Garlic Fried Rice Platter", description: "Advance Order: Whole/Half/Quarter/Solo.", type: 'multi_size', sizes: [{ sizeId: 'W', name: 'Whole', price: 615 }, { sizeId: 'H', name: 'Half', price: 325 }, { sizeId: 'Q', name: 'Quarter', price: 170 }, { sizeId: 'S', name: 'Solo', price: 30 }] },
 
-                    // Ulam Plate (2 Pax)
                     { id: 94, name: "Ulam Plate - Baked Liempo (2 Pax)", price: 150.00, description: "Good for 2 persons.", type: 'single' },
                     { id: 95, name: "Ulam Plate - Breaded Pork (2 Pax)", price: 150.00, description: "Good for 2 persons.", type: 'single' },
                     { id: 96, name: "Ulam Plate - Sisig (2 Pax)", price: 160.00, description: "Good for 2 persons.", type: 'single' },
                     { id: 97, name: "Ulam Plate - Pork BBQ (2 Pax)", price: 160.00, description: "Good for 2 persons.", type: 'single' },
                     
-                    // Roasted Meat
                     { id: 98, name: "Roasted Rosemary Chicken", price: 359.00, description: "Whole chicken.", type: 'single' },
                     { id: 99, name: "Roasted Spare Ribs w/ Baked Potato (Half)", price: 999.00, description: "Half Tray.", type: 'single' },
                     { id: 100, name: "Roasted Spare Ribs w/ Baked Potato (Whole)", price: 1899.00, description: "Whole Tray.", type: 'single' },
                 ]
             },
-            // ----------------------------------------------------
-            // 10. DRINKS & SHAKES (ID 101-108)
-            // Note: Canned/Bottled drinks from previous menu are retained for completeness.
-            // ----------------------------------------------------
+            
             {
                 category: "DRINKS & SHAKES",
                 items: [
@@ -386,15 +347,14 @@
             },
         ];
 
-        // Flat menu for easy lookup. Items with multiple sizes are expanded here.
         const menu = categorizedMenu.flatMap(cat => cat.items.flatMap(item => {
             if (item.sizes && item.sizes.length > 0) {
                 return item.sizes.map(size => ({
                     ...item,
-                    uniqueId: `${item.id}-${size.sizeId}`, // Unique ID for cart item
+                    uniqueId: `${item.id}-${size.sizeId}`, 
                     price: size.price,
                     sizeName: size.name,
-                    baseName: item.name, // Keep original name for grouping
+                    baseName: item.name, 
                     description: item.description,
                     type: item.type
                 }));
@@ -404,9 +364,8 @@
 
 
         let cart = [];
-        let orderMode = null; // State for 'delivery', 'pickup', or 'dinein'
+        let orderMode = null; 
 
-        // --- DOM ELEMENTS ---
         const menuContainer = document.getElementById('menu-container');
         const cartDisplay = document.getElementById('cart-display');
         const cartTotalEl = document.getElementById('cart-total');
@@ -417,23 +376,16 @@
         const modalSummaryEl = document.getElementById('modal-summary');
         const dynamicFormDetails = document.getElementById('dynamic-form-details');
         
-        // --- CORE FUNCTIONS ---
 
-        /**
-         * Renders the menu items to the screen, now handling items with item.sizes.
-         */
+        
         function renderMenu() {
             menuContainer.innerHTML = categorizedMenu.map(categoryGroup => {
-                // Category Header
                 const categoryHeader = `
                     <h3 class="text-3xl font-extrabold text-gray-900 border-b-2 border-red-500 mt-8 mb-6 pt-4">${categoryGroup.category}</h3>
                 `;
 
-                // Items Grid
                 const itemsHtml = categoryGroup.items.map(item => {
-                    // Check if item has multiple sizes/prices
                     if (item.sizes && item.sizes.length > 0) {
-                        // Render multi-size items
                         const sizeOptions = item.sizes.map(size => {
                             const uniqueId = `${item.id}-${size.sizeId}`;
                             return `
@@ -467,7 +419,6 @@
                             </div>
                         `;
                     } else {
-                        // Render single-price items
                         return `
                             <div class="menu-card bg-white p-6 rounded-xl shadow-lg flex flex-col justify-between border-l-4 border-red-700">
                                 <div>
@@ -485,18 +436,13 @@
                     }
                 }).join('');
 
-                // Combine header and grid wrapper
                 return categoryHeader + `<div class="grid grid-cols-1 md:grid-cols-2 gap-6">${itemsHtml}</div>`;
 
             }).join('');
         }
 
-        /**
-         * Adds an item (by its unique ID) to the cart or increments its quantity.
-         * @param {string} uniqueId - The unique ID of the item (e.g., '31-12' or '63-0').
-         */
+        
         function addToCart(uniqueId) {
-            // Find the item details from the flattened menu
             const item = menu.find(i => i.uniqueId === uniqueId);
             
             if (!item) {
@@ -509,7 +455,6 @@
             if (cartItem) {
                 cartItem.quantity++;
             } else {
-                // Create a clean item object for the cart
                 cart.push({ 
                     uniqueId: item.uniqueId, 
                     name: item.baseName,
@@ -522,10 +467,7 @@
             updateCartDisplay();
         }
 
-        /**
-         * Removes one quantity of an item from the cart. If quantity is 1, removes the item.
-         * @param {string} uniqueId - The unique ID of the item to remove.
-         */
+        
         function removeFromCart(uniqueId) {
             const index = cart.findIndex(ci => ci.uniqueId === uniqueId);
 
@@ -540,9 +482,7 @@
             updateCartDisplay();
         }
 
-        /**
-         * Updates the cart display, total, and button status.
-         */
+        
         function updateCartDisplay() {
             if (cart.length === 0) {
                 cartDisplay.innerHTML = '<p class="text-gray-500 text-center py-4">Your cart is empty.</p>';
@@ -573,36 +513,24 @@
             checkOrderButtonStatus();
         }
 
-        /**
-         * Dynamically sets the order mode and updates the form.
-         * @param {string} mode - The selected mode ('delivery', 'pickup', or 'dinein').
-         */
+        
         function setOrderMode(mode) {
             orderMode = mode;
             
-            // 1. Update button appearance
             document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`btn-${mode}`).classList.add('active');
 
-            // 2. Generate and display the form section
             dynamicFormDetails.innerHTML = generateFormHtml(mode);
             dynamicFormDetails.classList.add('p-4', 'bg-white', 'rounded-xl', 'shadow-inner');
-            document.getElementById('mode-prompt')?.remove(); // Remove prompt if it exists
+            document.getElementById('mode-prompt')?.remove(); 
 
-            // 3. Re-evaluate button status
             checkOrderButtonStatus();
         }
 
-        /**
-         * Generates the required HTML fields based on the selected mode.
-         * @param {string} mode - The selected mode.
-         * @returns {string} The HTML string for the form fields.
-         */
         function generateFormHtml(mode) {
             const inputClass = "w-full p-3 border border-gray-300 rounded-lg focus:ring-red-700 focus:border-red-700 transition duration-150";
             let html = `<h3 class="text-xl font-bold accent-red-text border-b pb-2 mb-4">Customer Details - ${mode.charAt(0).toUpperCase() + mode.slice(1)}</h3>`;
 
-            // Common fields for Delivery and Pick Up
             if (mode === 'delivery' || mode === 'pickup') {
                 html += `
                     <label class="block">
@@ -647,7 +575,6 @@
                 `;
             }
 
-            // ADDED: Special Instructions field for all modes to handle flavor/combo choices
             html += `
                 <label class="block">
                     <span class="text-gray-700 font-medium text-sm">Special Instructions / Notes:</span>
@@ -658,17 +585,11 @@
             return html;
         }
 
-
-        /**
-         * Checks if the cart is not empty and all required form fields for the current mode are filled.
-         */
         function checkOrderButtonStatus() {
             let isCartNotEmpty = cart.length > 0;
             let areDetailsComplete = false;
             
             if (orderMode) {
-                // Check if all inputs inside the dynamic form details are valid/filled
-                // The 'notes' textarea is NOT required.
                 const formInputs = dynamicFormDetails.querySelectorAll('input[required], textarea[required]');
                 let allInputsValid = true;
                 
@@ -680,7 +601,6 @@
                     });
                     areDetailsComplete = allInputsValid;
                 } else {
-                    // If no form inputs are required (e.g., initial state), treat as complete if a mode is set
                     areDetailsComplete = true; 
                 }
             }
@@ -700,26 +620,19 @@
             }
         }
 
-        /**
-         * Handles the order submission, validates the form, and displays the confirmation.
-         * @param {Event} event - The form submission event.
-         */
         function placeOrder(event) {
             event.preventDefault();
             
             if (!orderMode || cart.length === 0) {
-                // Since the button is disabled, this is a fallback for safety.
                 return;
             }
 
-            // Collect all form data dynamically
             const formData = new FormData(orderForm);
             let orderDetails = { mode: orderMode };
             for (const [key, value] of formData.entries()) {
                 orderDetails[key] = value;
             }
 
-            // 1. Prepare modal summary content
             let detailHtml = `<p><strong>Method:</strong> <span class="accent-red-text font-bold">${orderDetails.mode.charAt(0).toUpperCase() + orderDetails.mode.slice(1)}</span></p>`;
             
             if (orderMode === 'delivery') {
@@ -736,7 +649,6 @@
                 detailHtml += `<p><strong>Time:</strong> ${orderDetails.dineinTime}</p>`;
             }
             
-            // Show notes if provided
             if(orderDetails.notes) {
                  detailHtml += `<p class="mt-2 text-red-600"><strong>Notes:</strong> ${orderDetails.notes}</p>`;
             }
@@ -750,14 +662,11 @@
 
             modalSummaryEl.innerHTML = detailHtml;
 
-            // 2. Show the modal
             showModal();
 
-            // 3. Clear the cart and reset form after placing the order (simulated)
             cart = [];
             orderMode = null;
             orderForm.reset();
-            // Reset the form details area
             dynamicFormDetails.innerHTML = `<p id="mode-prompt" class="text-sm text-gray-500 text-center p-4 bg-yellow-50 rounded-lg">
                 Please select an **Order Method** above to proceed with your details.
             </p>`;
@@ -765,42 +674,33 @@
             updateCartDisplay();
         }
 
-        /**
-         * Displays the confirmation modal with animation.
-         */
+        
         function showModal() {
             modalOverlayEl.classList.remove('hidden');
             modalOverlayEl.classList.add('flex');
-            // Animate in
             setTimeout(() => {
                 modalContentEl.classList.remove('scale-95', 'opacity-0');
                 modalContentEl.classList.add('scale-100', 'opacity-100');
             }, 10);
         }
 
-        /**
-         * Closes the confirmation modal with animation.
-         */
+        
         function closeModal() {
-            // Animate out
             modalContentEl.classList.remove('scale-100', 'opacity-100');
             modalContentEl.classList.add('scale-95', 'opacity-0');
             setTimeout(() => {
                 modalOverlayEl.classList.add('hidden');
                 modalOverlayEl.classList.remove('flex');
-            }, 300); // Match transition duration
+            }, 300); 
         }
 
-        // --- INITIALIZATION ---
         window.onload = () => {
             renderMenu();
             updateCartDisplay();
             
-            // Listen for changes in form fields to update button status
             orderForm.addEventListener('input', checkOrderButtonStatus);
             orderForm.addEventListener('submit', placeOrder);
 
-            // Export functions to window scope for inline HTML event handlers to work
             window.addToCart = addToCart;
             window.removeFromCart = removeFromCart;
             window.closeModal = closeModal;
